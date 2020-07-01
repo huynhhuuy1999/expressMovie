@@ -1,0 +1,68 @@
+.item-detail{
+    display: flex;
+}
+.item-detail img{
+    width: 300px;
+    height: 430px;
+}
+.item-detail .cover-img{
+    width: 300px;
+    height: 80px;
+    position: relative;
+    top: -80px;
+    background-color: #000;
+    opacity: 0.5;
+}
+.item-detail .btn-select{
+    display: flex;
+    width: 300px;
+    height: auto;
+    position: relative;
+    top: -140px;
+    justify-content: space-around;
+}
+.btn-select button{
+    border: none;
+    border-radius: 10px;
+    padding:5px 12px;
+    font-size: 18px;
+    color: #FFF;
+}
+.blue{
+    background-color: #2a90d1;
+}
+.red{
+    background-color: tomato;
+}
+.green{
+    background-color: forestgreen;
+}
+.info{
+    border: 1px solid gray;
+    width: 500px;
+    height:430px ;
+}
+.name-film .name{
+    font-size: 25px;
+    color:yellow;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.name-film .nameEnglish{
+    font-size: 14px;
+    color:#FFF;
+}
+.info-detail{
+    width:450px ;
+    height: 330px;
+    margin: auto;
+    background: #2c2929;
+    margin-top: 10px;
+    border: 3px solid #241c1c;
+    color: #FFF;
+    line-height: 30px;
+    overflow-y: auto;
+}
+.text-different{
+    color:#2a90d1;
+}

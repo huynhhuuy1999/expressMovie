@@ -1,0 +1,16 @@
+extends ../layouts/common.pug
+
+block content
+    style
+        include ../../public/style/home/styleIndex.css
+    .list-film
+        each p in phim
+            a(href="/film/detail/"+p._id)
+                .item-film
+                    .image-film
+                        img(src="/image/"+p.image, alt="")
+                    .info-film
+                        span.font-weight-bold.name-film=p.name
+                        br
+                        span.nameEnglish-film=p.nameEnglish
+        

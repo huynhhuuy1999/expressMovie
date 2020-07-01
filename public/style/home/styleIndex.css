@@ -1,0 +1,22 @@
+.list-film{
+    display: flex;
+    flex-wrap: wrap;
+}
+.item-film{
+    margin-left: 20px;
+}
+.item-film img{
+    width: 170px;
+    height: 230px;
+    background-position: center;
+    background-size: cover;
+}
+.info-film{
+    color:#FFF;
+}
+.name-film{
+    font-size: 15px;
+}
+.nameEnglish-film{
+    font-size: 12px;
+}
