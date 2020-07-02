@@ -17,7 +17,7 @@ block content
                     span.name.ml-3=p.name
                     br
                     span.nameEnglish.ml-3=p.nameEnglish
-                .info-detail.ml-3.pl-3
+                .info-detail.ml-3.pl-3.style-scroll
                     span Trạng thái: 
                     span=p.status
                     br
@@ -25,17 +25,19 @@ block content
                     span.text-different=p.director
                     br
                     span Quốc gia: 
-                    span.text-different=p.country
+                    each qg in p.country
+                        -let x = ", "
+                        span.text-different=qg.name
                     br
                     span Năm: 
                     span.text-different=p.year
                     br
                     span Thời lượng: 
-                    if p.time > 1
+                    if p.episodes !== "1"
                         - var x= " phút/tập"
                         span=p.time + x
                     else
-                        -var x = "phút"
+                        -var x = " phút"
                         span=p.time + x
                     br
                     span Số tập: 
@@ -48,6 +50,7 @@ block content
                     span=p.resolution
                     br
                     span Thể loại: 
-                    span.text-different=p.category
-                    br
+                    each tl in p.category
+                        -let x = ", " 
+                        span.text-different=tl.name+x
 

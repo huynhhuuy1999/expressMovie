@@ -1,0 +1,42 @@
+.list-film{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #2c2c2e;
+}
+.item-film{
+    margin-right: 20px;
+    position: relative;
+}
+.image-film{
+    position: relative;
+}
+.item-film img{
+    width: 225px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+.cover-img{
+    width: 225px;
+    height: 60px;
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 240px;
+}
+.info-film{
+    color:#FFF;
+    position: absolute;
+    top: 250px;
+    padding-left: 10px;
+}
+.name-film{
+    font-size: 15px;
+    color:#fa532d;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+}
+.nameEnglish-film{
+    font-size: 12px;
+}

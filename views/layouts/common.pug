@@ -5,6 +5,7 @@ html
         link(rel="stylesheet", href="/fontawesome/fontawesome-pro-5.12.0-web/css/all.min.css")
         link(rel="stylesheet",href="/style/layout/common.css")
         link(href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
     body
         .cover
             .container.header
@@ -18,21 +19,50 @@ html
                 .search
                     form(action="" method="")
                         .form-search
-                            input#text-search.pl-2.pr-2(type="text" name="search" placeholder="Nhập tên phim, tên diễn viên")
+                            input#text-search.pl-3.pr-2.pt-3.pb-3(type="text" name="search" placeholder="Nhập tên phim, tên diễn viên")
                             input.ml-2#search-btn(type="submit" name="submit" value="Tìm kiếm")
             .break
             .cover-menu
                 .container
                     .list-menu
                         ul
-                            li Phim mới
-                            li Thể loại
-                            li Quốc gia
-                            li Phim lẻ
-                            li Phim bộ
-                            li Phim thuyết minh
-                            li Phim chiếu rạp
-                            li Top imdb
+                            a(href="/home")
+                                li Phim mới
+                            li.category Thể loại
+                                ul.sub-menu
+                                    -let category = [{"hanh-dong":"Hành động"},{"tinh-cam":"Tình cảm"},{"hoat-hinh":"Hoạt hình"},{"hai-huoc":"Hài hước"},{"co-trang":"Cổ trang"},{"vo-thuat":"Võ thuật"},{"than-thoai":"Thần thoại"},{"chien-tranh":"Chiến tranh"},{"kinh-di":"Kinh dị"},{"the-thao":"Thể thao"},{"tam-ly":"Tâm lý"},{"gia-dinh":"Gia đình"},{"tai-lieu":"Tài liệu"},{"hinh-su":"Hình sự"},{"phieu-luu":"Phiêu lưu"},{"hoi-hop-gay-can":"Hồi hộp - Gây cấn"},{"bi-an-sieu-nhien":"Bí ẩn - Siêu nhiên"},{"vien-tuong":"Viễn tưởng"}]
+                                    each tl in category
+                                        each val,key in tl
+                                            a(href="/Film/category/"+key)
+                                                li=val
+                            li.category Quốc gia
+                                ul.sub-menu
+                                    -let category2 = [{"vn":"Việt Nam"},{"trung-quoc":"Trung Quốc"},{"nhat-ban":"Nhật Bản"},{"han-quoc":"Hàn Quốc"},{"my":"Mỹ"},{"dai-loan":"Đài loan"},{"an-do":"Ấn Độ"},{"thai-lan":"Thái Lan"},{"anh":"Anh"},{"nga":"Nga"},{"duc":"Đức"}]
+                                    each tl2 in category2
+                                        each val,key in tl2
+                                            a(href="/Film/country/"+key)
+                                                li=val
+                            a.spec-a(href="/Film/odd-film")
+                                li.category Phim lẻ
+                                    ul.sub-menu.text-year
+                                        -let category3 = [2020,2019,2018,2017,2016,2015,2014,-2014]
+                                        each tl3 in category3
+                                            a(href="/Film/odd-film/"+tl3)
+                                                if tl3===-2014
+                                                    -let a = "Trước 2014"
+                                                    li=a
+                                                else
+                                                    li=tl3
+                            a(href="/Film/series-film")
+                                li Phim bộ
+                            a(href="")
+                                li Phim thuyết minh
+                            a(href="")
+                                li Phim chiếu rạp
+                            a(href="")
+                                li Top imdb
         .cover-body
             .container
                 block content
+    .footer
+        p abcdef

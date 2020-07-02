@@ -1,16 +1,55 @@
 extends ../layouts/common.pug
-
 block content
     style
+        include ../../public/style/film/styleListFilmMain.css
         include ../../public/style/home/styleIndex.css
-    .list-film
+    .list-film.p-3
         each p in phim
             a(href="/film/detail/"+p._id)
                 .item-film
                     .image-film
                         img(src="/image/"+p.image, alt="")
+                        .cover-img
                     .info-film
                         span.font-weight-bold.name-film=p.name
                         br
                         span.nameEnglish-film=p.nameEnglish
+    .cover-tab-trailer.mt-4
+        .tabs
+            ul.nav.nav-tabss
+                li.nav-item
+                    span.nav-link#odd-film Phim lẻ mới
+                li.nav-item
+                    span.nav-link#series-film Phim bộ mới
+                li.nav-item
+                    span.nav-link#fullFilm Phim lẻ full
+            .list
+                each newFilm in newOddFilm
+                    .item-new-film.p-2
+                        .img-new-film
+                            img(src="/image/"+newFilm.image, alt="")
+                        .info-new-film.pl-2
+                            span.name-new-film=newFilm.name
+                            br
+                            span.nameEng-new-film=newFilm.nameEnglish
+                        .time-new-film
+                            -let phut = " phút"
+                            span=newFilm.time + phut
+        .cover-trailer
+            p.text-trailer
+                i.fas.fa-star
+                span &nbsp Trailer phim mới
+            .list-trailer.style-scroll
+                each trail in trailer
+                    .item-trailer.p-3
+                        .img
+                            img(src="/image/"+trail.image, alt="")
+                        .info.pl-2.pr-2
+                            span.name=trail.name
+                            br
+                            span.nameEnglish=trail.nameEnglish
+    script
+        include ../../public/script/home.index.script.js
+            
+
         

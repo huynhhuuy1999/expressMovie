@@ -1,5 +1,15 @@
 .item-detail{
     display: flex;
+    box-sizing: border-box;
+    background-color: #2c2c2e;
+    padding:10px;
+    width: min-content;
+}
+.div-image{
+    position: relative;
+}
+.div-image .img{
+    position: relative;
 }
 .item-detail img{
     width: 300px;
@@ -7,25 +17,25 @@
 }
 .item-detail .cover-img{
     width: 300px;
-    height: 80px;
-    position: relative;
-    top: -80px;
+    height: 70px;
+    position: absolute;
+    top: 360px;
     background-color: #000;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 .item-detail .btn-select{
     display: flex;
     width: 300px;
     height: auto;
-    position: relative;
-    top: -140px;
-    justify-content: space-around;
+    position: absolute;
+    top: 380px;
+    justify-content: space-evenly;
 }
 .btn-select button{
     border: none;
     border-radius: 10px;
     padding:5px 12px;
-    font-size: 18px;
+    font-size: 15px;
     color: #FFF;
 }
 .blue{
@@ -39,22 +49,21 @@
 }
 .info{
     border: 1px solid gray;
-    width: 500px;
+    width: 430px;
     height:430px ;
 }
 .name-film .name{
-    font-size: 25px;
-    color:yellow;
+    font-size: 22px;
+    color:#dacb46;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
 }
 .name-film .nameEnglish{
-    font-size: 14px;
+    font-size: 12px;
     color:#FFF;
 }
 .info-detail{
-    width:450px ;
-    height: 330px;
+    width:400px ;
+    height: 250px;
     margin: auto;
     background: #2c2929;
     margin-top: 10px;
@@ -62,7 +71,15 @@
     color: #FFF;
     line-height: 30px;
     overflow-y: auto;
+    font-size: small;
 }
 .text-different{
-    color:#2a90d1;
+    color:#56d3fc;
+}
+.style-scroll::-webkit-scrollbar{
+    width: 6px;
+    background-color: gray;
+}
+.style-scroll::-webkit-scrollbar-thumb {
+    background-color: #1a1a1d;
 }
