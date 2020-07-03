@@ -26,7 +26,10 @@ var phimSchema = new mongoose.Schema({
     star:{type:Number,default:0},
     amount: {type:Number,default:0}
   },
-  view:{type:Number,default:0}
+  view:{
+    viewAll:{type:Number,default:0},
+    viewWeek:{type:Number,default:0}
+  }
 });
 
 var phim = mongoose.model("Phim", phimSchema, "phim");

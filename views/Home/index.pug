@@ -1,19 +1,19 @@
 extends ../layouts/common.pug
+
 block content
     style
         include ../../public/style/film/styleListFilmMain.css
         include ../../public/style/home/styleIndex.css
-    .list-film.p-3
+    .all-film.p-3
         each p in phim
             a(href="/film/detail/"+p._id)
-                .item-film
-                    .image-film
+                .item-film-all
+                    .image-film-all
                         img(src="/image/"+p.image, alt="")
-                        .cover-img
-                    .info-film
-                        span.font-weight-bold.name-film=p.name
-                        br
-                        span.nameEnglish-film=p.nameEnglish
+                        .cover-img-all
+                    .info-film-all
+                        span.font-weight-bold.name-film-all.text=p.name
+                        span.nameEnglish-film-all.text=p.nameEnglish
     .cover-tab-trailer.mt-4
         .tabs
             ul.nav.nav-tabss
@@ -29,9 +29,8 @@ block content
                         .img-new-film
                             img(src="/image/"+newFilm.image, alt="")
                         .info-new-film.pl-2
-                            span.name-new-film=newFilm.name
-                            br
-                            span.nameEng-new-film=newFilm.nameEnglish
+                            span.name-new-film.text=newFilm.name
+                            span.nameEng-new-film.text=newFilm.nameEnglish
                         .time-new-film
                             -let phut = " phút"
                             span=newFilm.time + phut
@@ -48,6 +47,77 @@ block content
                             span.name=trail.name
                             br
                             span.nameEnglish=trail.nameEnglish
+    .cover-content
+        .left.mr-3
+            .cover-list-little.mt-4
+                .text-title
+                    span Phim lẻ mới cập nhật
+                .list-film-little.pt-2
+                    each p in newUpdateOddFilm
+                        .item-filmx.mr-2.mb-3
+                            .cover-imgx
+                                img(src="/image/"+p.image, alt="")
+                                .fuzzy
+                            .info.p-1
+                                span.name.text=p.name
+                                span.nameEng.text=p.nameEnglish
+                                -let x=" phút"
+                                span.time=p.time+x
+            .cover-list-little.mt-4
+                .text-title
+                    span Phim bộ mới cập nhật
+                .list-film-little.pt-2
+                    each p in newUpdateSeriesFilm
+                        .item-filmx.mr-2.mb-3
+                            .cover-imgx
+                                img(src="/image/"+p.image, alt="")
+                                .fuzzy
+                            .info.p-1
+                                span.name.text=p.name
+                                span.nameEng.text=p.nameEnglish
+                                -let x=" phút"
+                                span.time=p.time+x
+            .cover-list-little.mt-4
+                .text-title
+                    span Phim hoạt hình mới cập nhật
+                .list-film-little.pt-2
+                    each pxx in newUpdateOddFilm
+                        .item-filmx.mr-2.mb-3
+                            .cover-imgx
+                                img(src="/image/"+pxx.image, alt="")
+                                .fuzzy
+                            .info.p-1
+                                span.name.text=pxx.name
+                                span.nameEng.text=pxx.nameEnglish
+                                -let x=" phút"
+                                span.time=pxx.time+x
+        .right
+            .cover-trailer.mt-4
+                p.text-trailer
+                    i.fas.fa-star
+                    span &nbsp Phim lẻ hot trong tuần
+                .list-trailer.style-scroll
+                    each p in hotOddFilmWeek
+                        .item-trailer.p-3
+                            .img
+                                img(src="/image/"+p.image, alt="")
+                            .info.pl-2.pr-2
+                                span.name=p.name
+                                br
+                                span.nameEnglish=p.nameEnglish
+            .cover-trailer.mt-4
+                p.text-trailer
+                    i.fas.fa-star
+                    span &nbsp Phim bộ hot trong tuần
+                .list-trailer.style-scroll
+                    each trail in trailer
+                        .item-trailer.p-3
+                            .img
+                                img(src="/image/"+trail.image, alt="")
+                            .info.pl-2.pr-2
+                                span.name=trail.name
+                                br
+                                span.nameEnglish=trail.nameEnglish
     script
         include ../../public/script/home.index.script.js
             
